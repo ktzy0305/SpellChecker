@@ -262,19 +262,20 @@ BinaryNode* AVL::rotateRightLeft(BinaryNode *t)
 
 void AVL::selfBalance(BinaryNode* &t)
 {
-	if (getHeight(t->left) - getHeight(t->right) == 2) //If the tree is left heavy
+	if (getHeight(t->left) - getHeight(t->right) >= 2) //If the tree is left heavy
 	{
-		if (getHeight(t->left) - getHeight(t->right) == 2) //If the tree's left subtree is NOT right heavy
-			rotateRight(t);
+		if (getHeight(t->left->right) - getHeight(t->left->left) < 2) //If the tree's left subtree is NOT right heavy
+			t = rotateRight(t);
 		else // The tree's left subtree is right heavy
-			rotateLeftRight(t);
+			t = rotateLeftRight(t);
 	}
-	if (getHeight(t->right) - getHeight(t->left) == 2) //If the tree is right heavy
+	if (getHeight(t->right) - getHeight(t->left) >= 2) //If the tree is right heavy
 	{
-		if (getHeight(t->right) - getHeight(t->left) == 2) //If the tree's right subtree is NOT left heavy
-			rotateLeft(t); //Perform Right-Left rotation
+		//if (getHeight(t->right->right) - getHeight(t->right->left) >= 2) //If the tree's right subtree is NOT left heavy
+		if (getHeight(t->right->left) - getHeight(t->right->left) < 2) //If the tree's right subtree is NOT left heavy
+			t = rotateLeft(t); //Perform Left rotation
 		else //The tree's right subtree is left heavy
-			rotateRightLeft(t);
+			t = rotateRightLeft(t);
 	}
 }
 
