@@ -120,6 +120,28 @@ void AVL::postorder(BinaryNode* t)
 	}
 }
 
+//Get words function based on in order traversing
+void AVL::getWordsInOrder(char c)
+{
+	if (isEmpty())
+		cout << "";
+	else
+		getWordsInOrder(root, c);
+}
+void AVL::getWordsInOrder(BinaryNode* t, char c)
+{
+	if (t != NULL)
+	{
+		getWordsInOrder(t->left, c);
+		if (t->item[0] == c)
+		{
+			cout << t->item << endl;
+		}
+		getWordsInOrder(t->right, c);
+	}
+}
+
+
 // check if the binary search tree is empty
 bool AVL::isEmpty()
 {

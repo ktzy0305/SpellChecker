@@ -49,16 +49,20 @@ public:
 	bool isBalanced();
 	bool isBalanced(BinaryNode *t);
 
-	//Single Rotations
+	// single rotations
 	BinaryNode* rotateLeft(BinaryNode* t);
 	BinaryNode* rotateRight(BinaryNode* t);
 
-	//Double Rotations
+	// double rotations
 	BinaryNode* rotateLeftRight(BinaryNode* t);
 	BinaryNode* rotateRightLeft(BinaryNode* t);
 
-	//Balancing
+	// auto balancing
 	void selfBalance(BinaryNode* &t);
+
+	// get words in order
+	void getWordsInOrder(char c);
+	void getWordsInOrder(BinaryNode* t, char c);
 };
 
 
