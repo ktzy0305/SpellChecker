@@ -65,8 +65,8 @@ public:
 	void getWordsInOrder(BinaryNode* t, char c);
 
 	// check substitution error
-	void checkSubstitutionError(ItemType target);
-	void checkSubstitutionError(BinaryNode* t, ItemType target);
+	void checkSubstitutionError(ItemType target, bool &found, bool &subError);
+	void checkSubstitutionError(BinaryNode* t, ItemType target, bool &found, bool &subError);
 	bool isSubstitutionError(string possibleWord, string userWord);
 
 };

@@ -300,25 +300,32 @@ void AVL::selfBalance(BinaryNode* &t)
 	}
 }
 
-void AVL::checkSubstitutionError(ItemType target)
+void AVL::checkSubstitutionError(ItemType target, bool &found, bool &subError)
 {
 	if (isEmpty())
 		cout << "The dictionary is empty." << endl;
 	else
-		checkSubstitutionError(root, target);
+		checkSubstitutionError(root, target, found, subError);
 }
 
-void AVL::checkSubstitutionError(BinaryNode* t, ItemType target)
+void AVL::checkSubstitutionError(BinaryNode* t, ItemType target, bool &found, bool &subError)
 {
 	if (t != NULL)
 	{
-		checkSubstitutionError(t->left, target);
-		if (t->item.size() == target.size())
-			if (isSubstitutionError(t->item, target))
-			{
-				cout << "\nThe entered word has a substitution error." << endl <<"Did you meant to find '"<< t->item <<"'?"<< endl << endl;
-			}
-		checkSubstitutionError(t->right, target);
+		if (target == t->item)
+		{
+			found = true;
+		}
+		else
+		{
+			checkSubstitutionError(t->left, target, found, subError);
+			if (t->item.size() == target.size())
+				if (isSubstitutionError(t->item, target) && !found)
+				{
+					subError = true;
+				}
+			checkSubstitutionError(t->right, target, found, subError);
+		}
 	}
 }
 

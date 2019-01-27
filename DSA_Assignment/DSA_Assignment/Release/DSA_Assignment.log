@@ -1,7 +1,8 @@
-﻿  AVL.cpp
-  DSA_Assignment.cpp
+﻿  DSA_Assignment.cpp
+c:\users\kevin\documents\github\spellchecker\dsa_assignment\dsa_assignment\dsa_assignment.cpp(152): warning C4018: '<': signed/unsigned mismatch
+c:\users\kevin\documents\github\spellchecker\dsa_assignment\dsa_assignment\dsa_assignment.cpp(158): warning C4018: '<': signed/unsigned mismatch
   Generating code
-  5 of 196 functions ( 2.6%) were compiled, the rest were copied from previous compilation.
+  4 of 250 functions ( 1.6%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
