@@ -1,5 +1,3 @@
-﻿  pch.cpp
-  AVL.cpp
-  DSA_Assignment.cpp
-  Generating Code...
+﻿  AVL.cpp
+c:\users\kevin\documents\github\spellchecker\dsa_assignment\dsa_assignment\avl.cpp(328): warning C4018: '<': signed/unsigned mismatch
   DSA_Assignment.vcxproj -> C:\Users\Kevin\Documents\GitHub\SpellChecker\DSA_Assignment\Debug\DSA_Assignment.exe

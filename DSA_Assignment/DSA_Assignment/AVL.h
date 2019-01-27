@@ -63,6 +63,12 @@ public:
 	// get words in order
 	void getWordsInOrder(char c);
 	void getWordsInOrder(BinaryNode* t, char c);
+
+	// check substitution error
+	void checkSubstitutionError(ItemType target);
+	void checkSubstitutionError(BinaryNode* t, ItemType target);
+	bool isSubstitutionError(string possibleWord, string userWord);
+
 };
 
 

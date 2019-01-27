@@ -293,7 +293,6 @@ void AVL::selfBalance(BinaryNode* &t)
 	}
 	if (getHeight(t->right) - getHeight(t->left) >= 2) //If the tree is right heavy
 	{
-		//if (getHeight(t->right->right) - getHeight(t->right->left) >= 2) //If the tree's right subtree is NOT left heavy
 		if (getHeight(t->right->left) - getHeight(t->right->left) < 2) //If the tree's right subtree is NOT left heavy
 			t = rotateLeft(t); //Perform Left rotation
 		else //The tree's right subtree is left heavy
@@ -301,6 +300,43 @@ void AVL::selfBalance(BinaryNode* &t)
 	}
 }
 
+void AVL::checkSubstitutionError(ItemType target)
+{
+	if (isEmpty())
+		cout << "The dictionary is empty." << endl;
+	else
+		checkSubstitutionError(root, target);
+}
+
+void AVL::checkSubstitutionError(BinaryNode* t, ItemType target)
+{
+	if (t != NULL)
+	{
+		checkSubstitutionError(t->left, target);
+		if (t->item.size() == target.size())
+			if (isSubstitutionError(t->item, target))
+			{
+				cout << "\nThe entered word has a substitution error." << endl <<"Did you meant to find '"<< t->item <<"'?"<< endl << endl;
+			}
+		checkSubstitutionError(t->right, target);
+	}
+}
+
+bool AVL::isSubstitutionError(string possibleWord, string userWord)
+{
+	int i;
+	for (i = 0; i < possibleWord.size(); i++)
+	{
+		if (possibleWord[i] != userWord[i])
+		{
+			break;
+		}
+	}
+	if (possibleWord.substr(i + 1) == userWord.substr(i + 1))
+		return true;
+	else
+		return false;
+}
 
 
 
