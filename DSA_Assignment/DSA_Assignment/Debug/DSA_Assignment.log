@@ -1,7 +1,4 @@
-﻿  AVL.cpp
-c:\users\kevin\documents\github\spellchecker\dsa_assignment\dsa_assignment\avl.cpp(335): warning C4018: '<': signed/unsigned mismatch
-  DSA_Assignment.cpp
-c:\users\kevin\documents\github\spellchecker\dsa_assignment\dsa_assignment\dsa_assignment.cpp(152): warning C4018: '<': signed/unsigned mismatch
-c:\users\kevin\documents\github\spellchecker\dsa_assignment\dsa_assignment\dsa_assignment.cpp(158): warning C4018: '<': signed/unsigned mismatch
-  Generating Code...
+﻿  DSA_Assignment.cpp
+c:\users\kevin\documents\github\spellchecker\dsa_assignment\dsa_assignment\dsa_assignment.cpp(219): warning C4018: '<': signed/unsigned mismatch
+c:\users\kevin\documents\github\spellchecker\dsa_assignment\dsa_assignment\dsa_assignment.cpp(225): warning C4018: '<': signed/unsigned mismatch
   DSA_Assignment.vcxproj -> C:\Users\Kevin\Documents\GitHub\SpellChecker\DSA_Assignment\Debug\DSA_Assignment.exe

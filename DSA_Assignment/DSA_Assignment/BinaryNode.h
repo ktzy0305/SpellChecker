@@ -1,3 +1,6 @@
+//Dominic Ng Jun Yao, S10177858H
+//Kevin Toh Zheng Ying, S10179142B
+
 #pragma once
 #include <string>
 
