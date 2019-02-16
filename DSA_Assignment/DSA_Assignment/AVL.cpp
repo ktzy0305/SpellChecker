@@ -83,7 +83,8 @@ int AVL::getHeight(BinaryNode* t) {
 	}
 }
 
-//Get words function based on in order traversing
+//This function traverse through the tree in order and checks for word values in each node 
+//that have the same starting letters as the prefix.
 void AVL::getWordsInOrder(string s, bool &found)
 {
 	if (isEmpty())
@@ -92,6 +93,11 @@ void AVL::getWordsInOrder(string s, bool &found)
 		getWordsInOrder(root, s, found);
 }
 
+//This function traverse through the tree in order and checks for word values in each node 
+//that have the same starting letters as the prefix by comparing the prefix against the
+//substring of the  node's word value from the zero index to the index of the character 
+//length of the prefix. If these two values match, a word that has the same starting
+//letters as the prefix is found.
 void AVL::getWordsInOrder(BinaryNode* t, string s, bool &found)
 {
 	if (t != NULL)
@@ -124,6 +130,10 @@ void AVL::saveFile(BinaryNode* t, ofstream& dict)
 	}
 }
 
+//This function checks for possible words that the entered word could have been a
+//substitution error of. It takes in two boolean values: found and subError that
+//is passed by reference. When the function has completed execution, these boolean
+//values can be used to determine if a substitution error really occurred.
 void AVL::checkSubstitutionError(ItemType target, bool &found, bool &subError)
 {
 	if (isEmpty())
@@ -132,6 +142,15 @@ void AVL::checkSubstitutionError(ItemType target, bool &found, bool &subError)
 		checkSubstitutionError(root, target, found, subError);
 }
 
+//This function checks for possible words that the entered word could have been a
+//substitution error of. It takes in two boolean values: found and subError that
+//is passed by reference. The found boolean value is set to true when the target
+//word is found in the tree. The subError boolean value is set to true whenever a
+//the target word is determined to be a substitution error of a word in the dictionary.
+//The function to determine if the user entered word is a substitution error of a word 
+//in the tree is done so by checking if the character length of both the user entered word
+//and the word in the tree's node are the same. When the function has completed execution, 
+//these boolean values can be used to determine if a substitution error really occurred.
 void AVL::checkSubstitutionError(BinaryNode* t, ItemType target, bool &found, bool &subError)
 {
 	if (t != NULL)
@@ -153,6 +172,16 @@ void AVL::checkSubstitutionError(BinaryNode* t, ItemType target, bool &found, bo
 	}
 }
 
+//This function is used to determine if the word entered by the user
+//is a substitution error of a word in the node of the tree. This is
+//determined by iterating through each character of the word in the node
+//and the user word where both of them will be compared to be matched.
+//Once a character of both words do not match, the loop will be broken and
+//the index value of where the loop break is stored in a integer variable
+//which will be subsequently used to compare the substring of both words
+//from the index after where the characters of both words do not match to
+//the end of the word. If the substring of both words match, a substitution
+//error is determined.
 bool AVL::isSubstitutionError(string possibleWord, string userWord)
 {
 	int i;
