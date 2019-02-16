@@ -1,6 +1,6 @@
 # SpellChecker
 ### A C++ spell checking console application!
-#### Done by: @xDommm and @ktzy0305
+#### Done by: [@xDommm](https://github.com/xDommm) and [@ktzy0305](https://github.com/ktzy0305)
 |S/N| Feature                                                                    |
 |:-:|----------------------------------------------------------------------------|
 | 1 | Spell check a word entered by the user (correct or wrong)                  |
